@@ -20,16 +20,24 @@ $VPGList | ForEach-Object {
     $DatastoreName = $_.DatastoreName
     $Folder = $_.Folder
 
+    #Get site id
+    $failoversiteid = Get-ZertoSiteID -ZertoSiteName $_.RecoverySiteName
+
+
     #create an array
     $VMs = @()
     $VMList | Where-Object {$_.VPGName -eq $VPGName} | ForEach-Object {
+        #get failover network id
+        $failovernetid = Get-ZertoSiteNetworkID -ZertoSiteIdentifier $failoversiteid -NetworkName $_.FailoverNetwork
+        $testnetid = Get-ZertoSiteNetworkID -ZertoSiteIdentifier $failoversiteid -NetworkName $_.TestNetwork
+
         #Make Recovery Object        
-        $VPGRecovery = New-VPGVMRecovery -FolderIdentifier $_.Folder
+        $VPGRecovery = New-ZertoVPGVMRecovery -FolderIdentifier $_.Folder
 
         #Make IP Object
         $IP = New-ZertoVPGFailoverIPAddress -NICName $_.NICName `
-                    -TestNetworkID $_.TestNetwork `
-                    -NetworkID $_.FailoverNetwork
+                    -TestNetworkID $testnetid `
+                    -NetworkID $failovernetid
 
         #Make VM Object
         $VM = New-ZertoVPGVirtualMachine -VMName $_.VMName -VPGFailoverIPAddress $IP -VPGVMRecovery $VPGRecovery
