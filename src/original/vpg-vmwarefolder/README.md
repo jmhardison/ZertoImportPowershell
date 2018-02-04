@@ -1,0 +1,2 @@
+This powershell creats a VPG based on folder membership in vCenter.
+Update the vpg-master.csv with relevant details, and update variables in the powershell script at the top to reference correct folder names.

@@ -1,0 +1,2 @@
+VPGName,ReplicationPriority,RecoverySiteName,ClusterName,FailoverNetwork,TestNetwork,DatastoreName,JournalDatastore,vCenterFolder,BootGroupDelay
+DemoVPG1,24,High,DC2,300,262080,DC2Cluster,VM Network,Isoalted B,DC2SAN,DC2SAN,100000,80000,ZertoRecovery,300

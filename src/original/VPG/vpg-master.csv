@@ -1,0 +1,2 @@
+VPGName,JournalHistoryInHours,ReplicationPriority,RecoverySiteName,RpoAlertInSeconds,TestIntervalInMinutes,ClusterName,FailoverNetwork,TestNetwork,DatastoreName,JournalDatastore,JournalHardLimitInMB,JournalWarningThresholdInMB,vCenterFolder
+DemoVPG1,24,High,Site2,500,252080,Cluster2,VM Network1,FailoverNetwork1,Testnetwork1,ProdDataStore1,ProdDataStore1,500000,TestFolder

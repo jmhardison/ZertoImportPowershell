@@ -1,0 +1,2 @@
+ProfileNo,JournalHistoryInHours,ReplicationPriority,RecoverySiteName,RpoAlertInSeconds,TestIntervalInMinutes,ClusterName,FailoverNetwork,TestNetwork,DatastoreName,JournalDatastore,JournalHardLimitInMB,JournalWarningThresholdInMB,vCenterFolder,BootGroupDelay
+1,24,High,DC2,300,262080,Cluster2,VM Network,TestNetowrk1,DC2SAN,DC2SAN,100000,80000,ZertoRecoveryFolder,60
